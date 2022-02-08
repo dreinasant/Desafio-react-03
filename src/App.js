@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React, { Component } from "react";
+import Fruta from './assets/pitaya.jpg'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class Informacoes extends Component {
+  state = {
+    humano: [
+      {
+        nome: "Andrêina",
+        idade: 21,
+        comidaFavorita: "Lasanha",
+        musicas: ["23:43", "Malvadão", "Girassol"]
+      }
+    ]
+  };
+
+  render() {
+    return (
+      <div class="contain">
+        <h1>Nome: {this.state.humano[0].nome}</h1>
+        <h2>Idade: {this.state.humano[0].idade}</h2>
+        <h3>ComidaFavorita: {this.state.humano[0].comidaFavorita}</h3>
+        <ul>
+          <li>23:43</li>
+          <li>Malvadão</li>
+          <li>Girassol</li>
+        </ul>
+        <img src={Fruta} class="intro-img" alt="fruta"/>
+      </div>
+    );
+  }
 }
 
-export default App;
+export default Informacoes;
